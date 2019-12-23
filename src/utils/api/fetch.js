@@ -15,6 +15,11 @@ async function fetchYears(username) {
   const $ = cheerio.load(await data.text());
   return $(".js-year-link")
     .get()
+    .filter(a => {
+      const $a = $(a);
+      const year = parseInt($a.text().trim(), 10);
+      return (year > 2018 ? true : false);
+    })
     .map(a => {
       const $a = $(a);
       return {
@@ -78,7 +83,7 @@ async function fetchDataForYear(url, year, format) {
   };
 }
 
-export async function fetchDataForAllYears(username, format) {
+export async function fetchDataForRecentYears(username, format) {
   const years = await fetchYears(username);
   return Promise.all(
     years.map(year => fetchDataForYear(year.href, year.text, format))
