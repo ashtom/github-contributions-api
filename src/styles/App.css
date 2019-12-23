@@ -130,14 +130,6 @@ form button {
   margin-bottom: 2rem;
 }
 
-.App-download-button {
-  min-height: 2rem;
-  line-height: 2rem;
-  padding: 0 1rem;
-  margin: 0 1rem;
-  margin-right: 0.5rem;
-}
-
 .App-themes label {
   display: flex;
   justify-content: flex-start;
