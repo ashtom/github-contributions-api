@@ -138,15 +138,6 @@ form button {
   margin-right: 0.5rem;
 }
 
-.App-twitter-button {
-  min-height: 2rem;
-  line-height: 2rem;
-  padding: 0 1rem;
-  margin: 0 1rem;
-  background-color: rgb(0, 169, 237);
-  border: 0;
-}
-
 .App-themes label {
   display: flex;
   justify-content: flex-start;
