@@ -1,6 +1,6 @@
 # GitHub Contributions API [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ashtom/github-contributions-canvas/blob/master/LICENSE)
 
-This project was forked from [sallar/github-contributions-chart](https://github.com/sallar/github-contributions-chart). It provides a simple API to fetch the GitHub contribution count of any user.
+This project was forked from [sallar/github-contributions-chart](https://github.com/sallar/github-contributions-chart). It provides a simple API to fetch the GitHub contribution count of any user. The charts and themes from the original project were removed.
 
 ## Install
 
