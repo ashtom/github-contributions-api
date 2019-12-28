@@ -83,10 +83,9 @@ async function fetchDataForYear(url, year, format) {
   };
 }
 
-export async function fetchDataForRecentYears(username, format) {
-  const years = await fetchYears(username);
+export async function fetchDataForLastYear(username, format) {
   return Promise.all(
-    years.map(year => fetchDataForYear(year.href, year.text, format))
+    [ fetchDataForYear(`/${username}`, "last", format) ]
   ).then(resp => {
     return {
       years: (() => {
