@@ -603,6 +603,11 @@ data-uri-to-buffer@3.0.1, data-uri-to-buffer@^3.0.1:
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-3.0.1.tgz#594b8973938c5bc2c33046535785341abc4f3636"
   integrity sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==
 
+date-fns@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.17.0.tgz#afa55daea539239db0a64e236ce716ef3d681ba1"
+  integrity sha512-ZEhqxUtEZeGgg9eHNSOAJ8O9xqSgiJdrL0lzSSfMF54x6KXWJiOH/xntSJ9YomJPrYH/p08t6gWjGWq1SDJlSA==
+
 decompress-response@^4.2.0:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/decompress-response/-/decompress-response-4.2.1.tgz#414023cc7a302da25ce2ec82d0d5238ccafd8986"
@@ -815,12 +820,12 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-github-contributions-canvas@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.4.0.tgz#9f2a772766d5ba67ea8d90bd123882db7b5a60a6"
-  integrity sha512-DfBVS3yzzToQlO1l0TfMk9WbvKRaAauXi9lnJQb63/NuUmDrUbydc7UcYhdZt8uHyP9/CbPA8qMVYCV+fht5TA==
+github-contributions-canvas@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.5.2.tgz#16848c2ae2bb978c344fdb1ba318054f9e6fd776"
+  integrity sha512-HaCDqbqdDYsQNBOlHT5WD8KzirMOX5sNVnTyLCZWyWfKQkyRILGioRJpR97eu3/l9xOVEV0aKaTHdzR/se1IOg==
   dependencies:
-    moment "^2.22.1"
+    date-fns "^2.17.0"
 
 github-from-package@0.0.0:
   version "0.0.0"
@@ -1124,11 +1129,6 @@ mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz#fa10c9115cc6d8865be221ba47ee9bed78601113"
   integrity sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==
-
-moment@^2.22.1:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 nanoid@^3.1.16:
   version "3.1.16"
