@@ -698,10 +698,10 @@ get-orientation@1.1.2:
   dependencies:
     stream-parser "^0.3.1"
 
-github-contributions-canvas@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.5.2.tgz#16848c2ae2bb978c344fdb1ba318054f9e6fd776"
-  integrity sha512-HaCDqbqdDYsQNBOlHT5WD8KzirMOX5sNVnTyLCZWyWfKQkyRILGioRJpR97eu3/l9xOVEV0aKaTHdzR/se1IOg==
+github-contributions-canvas@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.6.0.tgz#c444f1bc2dc952c23f51f21d863a62a76e6e10e5"
+  integrity sha512-pQWhd/SpcRjoxIFl+LgQPVmJwJko8E2BQej10eayDSnL8trLxDep+ob6XIAbmBXs01uFkSFNhNGRTMmO9U6uTA==
   dependencies:
     date-fns "^2.17.0"
 
