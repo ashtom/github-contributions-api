@@ -6,7 +6,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.6",
+    "cheerio": "^1.0.0-rc.9",
     "data-uri-to-buffer": "^3.0.1",
     "github-contributions-canvas": "^0.6.0",
     "lodash": "^4.17.21",
