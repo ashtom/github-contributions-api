@@ -140,10 +140,10 @@ data-uri-to-buffer@^4.0.0, data-uri-to-buffer@^4.0.1:
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz#d8feb2b2881e6a4f58c2e08acfd0e2834e26222e"
   integrity sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==
 
-date-fns@^2.17.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.17.0.tgz#afa55daea539239db0a64e236ce716ef3d681ba1"
-  integrity sha512-ZEhqxUtEZeGgg9eHNSOAJ8O9xqSgiJdrL0lzSSfMF54x6KXWJiOH/xntSJ9YomJPrYH/p08t6gWjGWq1SDJlSA==
+date-fns@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 dom-serializer@^2.0.0:
   version "2.0.0"
@@ -195,12 +195,12 @@ formdata-polyfill@^4.0.10:
   dependencies:
     fetch-blob "^3.1.2"
 
-github-contributions-canvas@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.6.0.tgz#c444f1bc2dc952c23f51f21d863a62a76e6e10e5"
-  integrity sha512-pQWhd/SpcRjoxIFl+LgQPVmJwJko8E2BQej10eayDSnL8trLxDep+ob6XIAbmBXs01uFkSFNhNGRTMmO9U6uTA==
+github-contributions-canvas@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.7.0.tgz#03d5eeb8b8942beaebaad63ac59fdee1266932a7"
+  integrity sha512-4dUBdWEq+yriCDp5XTKe2ETvTiaZbOSLYpG9r3SoKnnvLU2LrXb14Xgyg07UvrCspCGKRcp+pGwxG9zpqhGg1w==
   dependencies:
-    date-fns "^2.17.0"
+    date-fns "^2.29.3"
 
 htmlparser2@^8.0.1:
   version "8.0.1"
