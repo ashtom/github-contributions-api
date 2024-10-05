@@ -1,4 +1,4 @@
-# GitHub Contributions API 
+# GitHub Contributions API
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ashtom/github-contributions-canvas/blob/master/LICENSE)
 
