@@ -20,7 +20,7 @@ $ npm run dev
 
 ## Deployment
 
-This project is deployed on [ZEIT Now](https://zeit.co/).
+This project is deployed on [Vercel](https://vercel.com/).
 
 ## Contributing
 
