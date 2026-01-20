@@ -1,30 +1,49 @@
-import cheerio from 'cheerio'
-import fetch from 'node-fetch'
-import _ from 'lodash'
+import cheerio from "cheerio";
+import _ from "lodash";
+
+const COLOR_MAP = {
+  0: "#ebedf0",
+  1: "#9be9a8",
+  2: "#40c463",
+  3: "#30a14e",
+  4: "#216e39"
+};
 
 async function fetchYears(username) {
-  const data = await fetch(`https://github.com/${username}`);
-  const $ = cheerio.load(await data.text());
-  return $(".js-year-link")
+  const data = await fetch(`https://github.com/${username}?tab=contributions`, {
+    headers: {
+      "x-requested-with": "XMLHttpRequest"
+    }
+  });
+  const body = await data.text();
+  const $ = cheerio.load(body);
+  return $(".js-year-link.filter-item")
     .get()
-    .filter(a => {
+    .map((a) => {
       const $a = $(a);
-      const year = parseInt($a.text().trim(), 10);
-      return (year > 2018 ? true : false);
-    })
-    .map(a => {
-      const $a = $(a);
+      const href = $a.attr("href");
+      const githubUrl = new URL(`https://github.com${href}`);
+      githubUrl.searchParams.set("tab", "contributions");
+      const formattedHref = `${githubUrl.pathname}${githubUrl.search}`;
+
       return {
-        href: $a.attr("href"),
+        href: formattedHref,
         text: $a.text().trim()
       };
     });
 }
 
 async function fetchDataForYear(url, year, format) {
-  const data = await fetch(`https://github.com${url}`);
+  const data = await fetch(`https://github.com${url}`, {
+    headers: {
+      "x-requested-with": "XMLHttpRequest"
+    }
+  });
   const $ = cheerio.load(await data.text());
-  const $days = $("g rect.ContributionCalendar-day");
+  const $days = $(
+    "table.ContributionCalendar-grid td.ContributionCalendar-day"
+  );
+
   const contribText = $(".js-yearly-contributions h2")
     .text()
     .trim()
@@ -43,31 +62,28 @@ async function fetchDataForYear(url, year, format) {
       end: $($days.get($days.length - 1)).attr("data-date")
     },
     contributions: (() => {
-      const parseDay = day => {
+      const parseDay = (day, index) => {
         const $day = $(day);
-        var date;
-        if ($day.attr("data-date") === undefined) {
-          date = [0, 0, 0]
-        } else {
-          date = $day
-            .attr("data-date")
-            .split("-")
-            .map(d => parseInt(d, 10));
-        }
+        const date = $day
+          .attr("data-date")
+          .split("-")
+          .map((d) => parseInt(d, 10));
+        const color = COLOR_MAP[$day.attr("data-level")];
         const value = {
           date: $day.attr("data-date"),
-          count: parseInt($day.attr("data-count"), 10),
-          intensity: parseInt($day.attr("data-level"), 10)
+          count: index === 0 ? contribCount : 0,
+          color,
+          intensity: $day.attr("data-level") || 0
         };
         return { date, value };
       };
 
       if (format !== "nested") {
-        return $days.get().map(day => parseDay(day).value);
+        return $days.get().map((day, index) => parseDay(day, index).value);
       }
 
-      return $days.get().reduce((o, day) => {
-        const { date, value } = parseDay(day);
+      return $days.get().reduce((o, day, index) => {
+        const { date, value } = parseDay(day, index);
         const [y, m, d] = date;
         if (!o[y]) o[y] = {};
         if (!o[y][m]) o[y][m] = {};
@@ -78,14 +94,15 @@ async function fetchDataForYear(url, year, format) {
   };
 }
 
-export async function fetchDataForLastYear(username, format) {
+export async function fetchDataForAllYears(username, format) {
+  const years = await fetchYears(username);
   return Promise.all(
-    [ fetchDataForYear(`/${username}`, "last", format) ]
-  ).then(resp => {
+    years.map((year) => fetchDataForYear(year.href, year.text, format))
+  ).then((resp) => {
     return {
       years: (() => {
         const obj = {};
-        const arr = resp.map(year => {
+        const arr = resp.map((year) => {
           const { contributions, ...rest } = year;
           _.setWith(obj, [rest.year], rest, Object);
           return rest;
