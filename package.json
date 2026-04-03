@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.5",
-    "data-uri-to-buffer": "^7.0.0",
+    "data-uri-to-buffer": "^8.0.0",
     "github-contributions-canvas": "^0.8.0",
     "lodash": "^4.17.23",
     "next": "^16.2.1",
