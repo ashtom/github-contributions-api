@@ -9,7 +9,7 @@
     "cheerio": "1.0.0-rc.5",
     "data-uri-to-buffer": "^8.0.0",
     "github-contributions-canvas": "^0.8.0",
-    "lodash": "^4.17.23",
+    "lodash": "^4.18.1",
     "next": "^16.2.1",
     "node-fetch": "^3.3.2",
     "normalize.css": "^8.0.1",
