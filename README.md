@@ -6,16 +6,16 @@ This project was forked from [sallar/github-contributions-chart](https://github.
 
 ## Install
 
-Install the packages using [NPM](https://nodejs.org/en/):
+Use Node.js 24 and Yarn 1.22.22. Install dependencies from the committed lockfile:
 ```
-$ npm install
+$ yarn install --frozen-lockfile
 ```
 
 ## How to run
 
 Running locally:
 ```
-$ npm run dev
+$ yarn dev
 ```
 
 ## Deployment

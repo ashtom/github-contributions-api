@@ -3,7 +3,7 @@
   "description": "Generate an image of all your GitHub contributions",
   "version": "2.0.0",
   "engines": {
-    "node": ">=10"
+    "node": "24.x"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.5",
@@ -14,8 +14,8 @@
     "node-fetch": "^3.3.2",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
-    "react": "^19.3.1",
-    "react-dom": "^19.2.7"
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "license": "MIT",
   "bugs": {
@@ -26,5 +26,6 @@
     "start": "next start",
     "build": "next build",
     "dev": "next dev"
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }
